@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bot
+  namespace: kittea
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: bot
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot
+  namespace: kittea
+spec:
+  selector:
+    matchLabels:
+      app: bot
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: bot
+    spec:
+      imagePullSecrets:
+      - name: cr-tale-me
+      containers:
+      - image: cr.tale.me/kittea/bot:latest
+        imagePullPolicy: Always
+        name: kittea-bot
+        env:
+        - name: MC_EMAIL
+          value: colelewis2324@gmail.com
+        - name: MC_PASSWORD
+          value: theseareMYSFAs
+        - name: DISCORD_TOKEN
+          value: ODUxODYzMjQ0Nzc1NjIwNjQ4.YL-deA.6A1GQpEi4u6KvVV0nL662UybCrU
+        - name: DISCORD_CHANNEL
+          value: '867137370145685505'
