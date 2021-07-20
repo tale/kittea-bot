@@ -1,0 +1,8 @@
+FROM node:16-alpine
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml tsconfig.json ./
+RUN npm i -g pnpm && pnpm install
+COPY ./src ./
+
+ENTRYPOINT [ "pnpm", "dev" ]

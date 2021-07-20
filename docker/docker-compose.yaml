@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: kittea-bot
+    volumes:
+      - ../src:/app/src
+    environment:
+      MC_EMAIL: colelewis2324@gmail.com
+      MC_PASSWORD: theseareMYSFAs
+      DISCORD_TOKEN: ODUxODYzMjQ0Nzc1NjIwNjQ4.YL-deA.6A1GQpEi4u6KvVV0nL662UybCrU
+      DISCORD_CHANNEL: 867137370145685505
+
