@@ -22,7 +22,7 @@ if (!process.env.MC_PASSWORD) {
 }
 
 // Minecraft bot
-const bot = createBot({
+let bot = createBot({
 	username: process.env.MC_EMAIL,
 	password: process.env.MC_PASSWORD,
 	host: 'mc.hypixel.net',
@@ -37,30 +37,9 @@ bot.on('login', async() => {
 	console.log('Connected:', bot.username)
 })
 
-// Recreate the bot on any errors
-bot.on('kicked', (reason) => {
-	console.log('Kicked:', reason)
-	bot.connect({
-		username: process.env.MC_EMAIL!,
-		password: process.env.MC_PASSWORD,
-		host: 'mc.hypixel.net',
-		viewDistance: 'tiny'
-	})
-})
-
 bot.on('death', () => {
 	console.log('Experienced Death')
-	bot.connect({
-		username: process.env.MC_EMAIL!,
-		password: process.env.MC_PASSWORD,
-		host: 'mc.hypixel.net',
-		viewDistance: 'tiny'
-	})
-})
-
-bot.on('error', (err) => {
-	console.log('Error:', err.message)
-	bot.connect({
+	bot = createBot({
 		username: process.env.MC_EMAIL!,
 		password: process.env.MC_PASSWORD,
 		host: 'mc.hypixel.net',
@@ -118,6 +97,54 @@ bot.on('chat', async (chat, rawLine) => {
 	}
 })
 
+bot.on('kicked', () => {
+	bot.quit()
+	bot.end()
+
+	const embed = new MessageEmbed({
+		fields: [{
+			name: 'Bot was kicked',
+			value: 'Reconnecting shortly...',
+			inline: true
+		}],
+		color: '#ff4136'
+	})
+
+	webhook.send(embed)
+	bot = createBot({
+		username: process.env.MC_EMAIL!,
+		password: process.env.MC_PASSWORD,
+		host: 'mc.hypixel.net',
+		viewDistance: 'tiny'
+	})
+})
+
+bot.on('error', (err) => {
+	const embed = new MessageEmbed({
+		fields: [
+			{
+				name: 'Bot encountered error',
+				value: 'Reconnecting shortly...',
+				inline: true
+			},
+			{
+				name: 'Error Message',
+				value: err.message,
+				inline: true
+			}
+		],
+		color: '#ff4136'
+	})
+
+	webhook.send(embed)
+	bot = createBot({
+		username: process.env.MC_EMAIL!,
+		password: process.env.MC_PASSWORD,
+		host: 'mc.hypixel.net',
+		viewDistance: 'tiny'
+	})
+})
+
 // Discord bot
 let webhook: Webhook
 let guild: Guild
@@ -161,6 +188,17 @@ client.on('ready', async () => {
 		name: 'food',
 		type: 'WATCHING'
 	})
+
+	const embed = new MessageEmbed({
+		fields: [{
+			name: 'Discord bot is started',
+			value: 'Connecting to Hypixel',
+			inline: true
+		}],
+		color: '#7289da'
+	})
+
+	webhook.send(embed)
 })
 
 client.on('message', (message) => {
