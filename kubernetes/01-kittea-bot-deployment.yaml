@@ -1,37 +1,20 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: bot
-  namespace: kittea
-spec:
-  ports:
-  - port: 5432
-    targetPort: 5432
-  selector:
-    app: bot
-  clusterIP: None
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bot
-  namespace: kittea
+  name: kittea-bot
 spec:
   selector:
     matchLabels:
-      app: bot
+      app: kittea-bot
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: bot
+        app: kittea-bot
     spec:
-      imagePullSecrets:
-      - name: cr-tale-me
       containers:
-      - image: cr.tale.me/kittea/bot:latest
-        imagePullPolicy: Always
+      - image: tale.io/state/kittea-bot
         name: kittea-bot
         env:
         - name: MC_EMAIL

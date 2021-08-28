@@ -7,3 +7,6 @@ start:
 publish:
 	@docker build -t cr.tale.me/kittea/bot -f docker/Dockerfile.prod .
 	@docker push cr.tale.me/kittea/bot
+
+build:
+	@buildah bud -t tale.io/state/kittea-bot -f docker/Dockerfile.prod .

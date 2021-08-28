@@ -1,0 +1,17 @@
+name: Podman Deployment
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Build new Container
+        run: make build
+      - name: Terminate older Container
+        run: podman pod ps --filter label=app=kittea-bot -q | xargs podman pod rm -f
+        continue-on-error: true
+      - name: Start new Container
+        run: podman play kube kubernetes/01-kittea-bot-deployment.yaml
