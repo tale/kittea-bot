@@ -1,4 +1,4 @@
-import { Client, Guild, MessageEmbed, TextChannel, Webhook } from 'discord.js'
+import { Client, Guild, Intents, MessageEmbed, TextChannel, Webhook } from 'discord.js'
 import { createBot } from 'mineflayer'
 
 if (!process.env.DISCORD_TOKEN) {
@@ -23,8 +23,8 @@ if (!process.env.MC_PASSWORD) {
 
 // Minecraft bot
 let bot = createBot({
-	username: process.env.MC_EMAIL,
-	password: process.env.MC_PASSWORD,
+	username: 'ashley.daniels@hotmail.com',
+	password: 'SFAAccount1!',
 	host: 'mc.hypixel.net',
 	viewDistance: 'tiny'
 })
@@ -73,7 +73,7 @@ bot.on('chat', async (chat, rawLine) => {
 			}
 		})
 
-		webhook.send(embed)
+		webhook.send({ embeds: [embed] })
 		return
 	}
 
@@ -87,10 +87,10 @@ bot.on('chat', async (chat, rawLine) => {
 	const message = rawLine.split(':')[1]
 
 	try {
-		await webhook.send(message, {
+		await webhook.send({
+			content: message,
 			username: username,
-			avatarURL: `https://mc-heads.net/avatar/${username}/256`,
-			disableMentions: 'everyone'
+			avatarURL: `https://mc-heads.net/avatar/${username}/256`
 		})
 	} catch (err) {
 		console.error(err)
@@ -110,7 +110,7 @@ bot.on('kicked', () => {
 		color: '#ff4136'
 	})
 
-	webhook.send(embed)
+	webhook.send({ embeds: [embed] })
 	bot = createBot({
 		username: process.env.MC_EMAIL!,
 		password: process.env.MC_PASSWORD,
@@ -136,7 +136,7 @@ bot.on('error', (err) => {
 		color: '#ff4136'
 	})
 
-	webhook.send(embed)
+	webhook.send({ embeds: [embed] })
 	bot = createBot({
 		username: process.env.MC_EMAIL!,
 		password: process.env.MC_PASSWORD,
@@ -149,7 +149,10 @@ bot.on('error', (err) => {
 let webhook: Webhook
 let guild: Guild
 const client = new Client({
-	disableMentions: 'all'
+	intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_MESSAGES,
+	allowedMentions: {
+		parse: ['roles', 'users']
+	}
 })
 client.login(process.env.DISCORD_TOKEN)
 
@@ -175,7 +178,7 @@ client.on('ready', async () => {
 		avatar: client.user.avatarURL()!
 	})
 
-	let searchGuild = client.guilds.cache.get(webhook.guildID)
+	let searchGuild = client.guilds.cache.get(webhook.guildId)
 	if (!searchGuild) {
 		console.error('Couldn\'t find guild in cache')
 		process.exit(6)
@@ -183,8 +186,8 @@ client.on('ready', async () => {
 
 	guild = searchGuild
 
-	await client.user.setStatus('idle')
-	await client.user.setActivity({
+	client.user.setStatus('idle')
+	client.user.setActivity({
 		name: 'food',
 		type: 'WATCHING'
 	})
@@ -198,15 +201,15 @@ client.on('ready', async () => {
 		color: '#7289da'
 	})
 
-	webhook.send(embed)
+	webhook.send({ embeds: [embed] })
 })
 
-client.on('message', (message) => {
+client.on('messageCreate', (message) => {
 	if (message.author.bot) {
 		return
 	}
 
-	if (message.channel.id !== webhook.channelID) {
+	if (message.channel.id !== webhook.channelId) {
 		return
 	}
 
@@ -218,7 +221,7 @@ client.on('message', (message) => {
 		if (value.startsWith('<@') && value.endsWith('>')) {
 			// Some mentions have <@! which we need to dynamically slice
 			const userID = value.slice(value.startsWith('<@!') ? 3 : 2, -1)
-			const user = guild.member(userID)
+			const user = guild.members.cache.get(userID)
 
 			if (!user) {
 				return '@unknown'
