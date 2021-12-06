@@ -23,8 +23,8 @@ if (!process.env.MC_PASSWORD) {
 
 // Minecraft bot
 let bot = createBot({
-	username: 'ashley.daniels@hotmail.com',
-	password: 'SFAAccount1!',
+	username: process.env.MC_EMAIL,
+	password: process.env.MC_PASSWORD,
 	host: 'mc.hypixel.net',
 	viewDistance: 'tiny'
 })

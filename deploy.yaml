@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kittea-bot
+spec:
+  selector:
+    matchLabels:
+      app: kittea-bot
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: kittea-bot
+    spec:
+      containers:
+      - image: aerum.co/bots/kittea
+        name: kittea-bot
+        env:
+        - name: MC_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: kittea-bot-credentials
+              key: MC_EMAIL
+        - name: MC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: kittea-bot-credentials
+              key: MC_PASSWORD
+        - name: DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: kittea-bot-credentials
+              key: DISCORD_TOKEN
+        - name: DISCORD_CHANNEL
+          valueFrom:
+            secretKeyRef:
+              name: kittea-bot-credentials
+              key: DISCORD_CHANNEL
