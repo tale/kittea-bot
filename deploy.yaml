@@ -13,6 +13,8 @@ spec:
       labels:
         app: kittea-bot
     spec:
+      imagePullSecrets:
+      - name: aerum-registry
       containers:
       - image: aerum.co/bots/kittea
         name: kittea-bot
