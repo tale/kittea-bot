@@ -39,12 +39,7 @@ bot.on('login', async() => {
 
 bot.on('death', () => {
 	console.log('Experienced Death')
-	bot = createBot({
-		username: process.env.MC_EMAIL!,
-		password: process.env.MC_PASSWORD,
-		host: 'mc.hypixel.net',
-		viewDistance: 'tiny'
-	})
+	process.exit(0)
 })
 
 bot.on('chat', async (chat, rawLine) => {
@@ -98,9 +93,6 @@ bot.on('chat', async (chat, rawLine) => {
 })
 
 bot.on('kicked', () => {
-	bot.quit()
-	bot.end()
-
 	const embed = new MessageEmbed({
 		fields: [{
 			name: 'Bot was kicked',
@@ -111,12 +103,7 @@ bot.on('kicked', () => {
 	})
 
 	webhook.send({ embeds: [embed] })
-	bot = createBot({
-		username: process.env.MC_EMAIL!,
-		password: process.env.MC_PASSWORD,
-		host: 'mc.hypixel.net',
-		viewDistance: 'tiny'
-	})
+	process.exit(0)
 })
 
 bot.on('error', (err) => {
@@ -137,12 +124,7 @@ bot.on('error', (err) => {
 	})
 
 	webhook.send({ embeds: [embed] })
-	bot = createBot({
-		username: process.env.MC_EMAIL!,
-		password: process.env.MC_PASSWORD,
-		host: 'mc.hypixel.net',
-		viewDistance: 'tiny'
-	})
+	process.exit(0)
 })
 
 // Discord bot
