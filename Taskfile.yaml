@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  dev:
+    desc: 'Hot-reloading local Docker environment'
+    cmds:
+      - cmd: docker-compose -f docker/docker-compose.yaml -p kittea up --build
+        silent: true
+
+  clean:
+    desc: 'Clean the local Docker environment'
+    cmds:
+      - cmd: docker rm -f kittea-bot
+        silent: true
+
+  publish:
+    desc: 'Build and Publish an update container image'
+    cmds:
+      - cmd: docker build -t aerum.co/bots/kittea -f docker/Dockerfile.prod .
+        silent: true
+      - cmd: docker push aerum.co/bots/kittea
+        silent: true

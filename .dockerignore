@@ -1,5 +1,9 @@
-.gitignore
 .git/
-
-node_modules/
+dist/
 docker/
+node_modules/
+.dockerignore
+.gitignore
+deploy.yaml
+README.md
+Taskfile.yaml

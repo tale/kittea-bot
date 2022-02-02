@@ -1,8 +1,7 @@
 FROM node:16-alpine
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml tsconfig.json ./
+ADD package.json tsconfig.json pnpm-lock.yaml tsup.config.ts ./
 RUN npm i -g pnpm && pnpm install
-COPY ./src ./
 
 ENTRYPOINT [ "pnpm", "dev" ]
