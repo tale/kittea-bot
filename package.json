@@ -1,18 +1,17 @@
 {
-	"name": "kittea-bot",
-	"version": "1.0.0",
+	"type": "module",
 	"scripts": {
-		"dev": "tsnd --poll --respawn --transpile-only --no-deps --exit-child ./src/index.ts",
-		"start": "node ./dist/index.js",
-		"build": "tsc -p ."
+		"dev": "tsup --watch",
+		"build": "rm -rf dist && tsup --clean --dts --sourcemap --minify",
+		"start": "TZ=UTC node --experimental-specifier-resolution=node ./dist/index.js"
 	},
 	"dependencies": {
-		"discord.js": "^13.3.1",
-		"mineflayer": "^3.11.2"
+		"discord.js": "^13.6.0",
+		"mineflayer": "^3.15.0"
 	},
 	"devDependencies": {
-		"@types/node": "^16.11.11",
-		"ts-node-dev": "^1.1.8",
-		"typescript": "^4.5.2"
+		"@types/node": "^17.0.10",
+		"tsup": "^5.11.11",
+		"typescript": "^4.5.5"
 	}
 }
