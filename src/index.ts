@@ -1,242 +1,244 @@
-import { Client, Guild, Intents, MessageEmbed, TextChannel, Webhook } from 'discord.js'
-import { createBot } from 'mineflayer'
+import 'platforms'
 
-if (!process.env.DISCORD_TOKEN) {
-	console.error('Missing Discord token')
-	process.exit(1)
-}
+// import { Client, Guild, Intents, MessageEmbed, TextChannel, Webhook } from 'discord.js'
+// import { createBot } from 'mineflayer'
 
-if (!process.env.DISCORD_CHANNEL) {
-	console.error('Missing Discord channel ID')
-	process.exit(1)
-}
+// if (!process.env.DISCORD_TOKEN) {
+// 	console.error('Missing Discord token')
+// 	process.exit(1)
+// }
 
-if (!process.env.MC_EMAIL) {
-	console.error('Missing Minecraft email')
-	process.exit(2)
-}
+// if (!process.env.DISCORD_CHANNEL) {
+// 	console.error('Missing Discord channel ID')
+// 	process.exit(1)
+// }
 
-if (!process.env.MC_PASSWORD) {
-	console.error('Missing Minecraft password')
-	process.exit(3)
-}
+// if (!process.env.MC_EMAIL) {
+// 	console.error('Missing Minecraft email')
+// 	process.exit(2)
+// }
 
-// Minecraft bot
-let bot = createBot({
-	username: process.env.MC_EMAIL,
-	password: process.env.MC_PASSWORD,
-	host: 'mc.hypixel.net',
-	viewDistance: 'tiny'
-})
+// if (!process.env.MC_PASSWORD) {
+// 	console.error('Missing Minecraft password')
+// 	process.exit(3)
+// }
 
-bot.on('login', async() => {
-	// This message sends to limbo
-	bot.chat('/ac \u00a7')
+// // Minecraft bot
+// let bot = createBot({
+// 	username: process.env.MC_EMAIL,
+// 	password: process.env.MC_PASSWORD,
+// 	host: 'mc.hypixel.net',
+// 	viewDistance: 'tiny'
+// })
 
-	await bot.waitForChunksToLoad()
-	console.log('Connected:', bot.username)
-})
+// bot.on('login', async() => {
+// 	// This message sends to limbo
+// 	bot.chat('/ac §')
 
-bot.on('death', () => {
-	console.log('Experienced Death')
-	process.exit(0)
-})
+// 	await bot.waitForChunksToLoad()
+// 	console.log('Connected:', bot.username)
+// })
 
-bot.on('chat', async (chat, rawLine) => {
-	if (rawLine.length <= 0) {
-		return
-	}
+// bot.on('death', () => {
+// 	console.log('Experienced Death')
+// 	process.exit(0)
+// })
 
-	if (chat !== 'Guild') {
-		return
-	}
+// bot.on('chat', async (chat, rawLine) => {
+// 	if (rawLine.length <= 0) {
+// 		return
+// 	}
 
-	if (rawLine.includes('joined') || rawLine.includes('left')) {
-		const username = rawLine.split(' ')[0]
+// 	if (chat !== 'Guild') {
+// 		return
+// 	}
 
-		// I could split this into 2 checks but I'm lazy
-		const action = rawLine.includes('joined') ? 'joined' : 'left'
+// 	if (rawLine.includes('joined') || rawLine.includes('left')) {
+// 		const username = rawLine.split(' ')[0]
 
-		const embed = new MessageEmbed({
-			fields: [{
-				name: username,
-				value: `${action} Hypixel`,
-				inline: true
-			}],
-			thumbnail: {
-				url: `https://mc-heads.net/avatar/${username}/48`
-			}
-		})
+// 		// I could split this into 2 checks but I'm lazy
+// 		const action = rawLine.includes('joined') ? 'joined' : 'left'
 
-		webhook.send({ embeds: [embed] })
-		return
-	}
+// 		const embed = new MessageEmbed({
+// 			fields: [{
+// 				name: username,
+// 				value: `${action} Hypixel`,
+// 				inline: true
+// 			}],
+// 			thumbnail: {
+// 				url: `https://mc-heads.net/avatar/${username}/48`
+// 			}
+// 		})
 
-	// We need to ignore the chat delimiter and then get the bit after a potential rank
-	// Ranks are wrapped in brackets: [MVP+] and the chat delimiter is always :
-	const username = rawLine.split(':')[0].split(' ')[rawLine.startsWith('[') ? 1 : 0]
-	if (username == bot.username) {
-		return
-	}
+// 		webhook.send({ embeds: [embed] })
+// 		return
+// 	}
 
-	const message = rawLine.split(':')[1]
+// 	// We need to ignore the chat delimiter and then get the bit after a potential rank
+// 	// Ranks are wrapped in brackets: [MVP+] and the chat delimiter is always :
+// 	const username = rawLine.split(':')[0].split(' ')[rawLine.startsWith('[') ? 1 : 0]
+// 	if (username == bot.username) {
+// 		return
+// 	}
 
-	try {
-		await webhook.send({
-			content: message,
-			username: username,
-			avatarURL: `https://mc-heads.net/avatar/${username}/256`
-		})
-	} catch (err) {
-		console.error(err)
-	}
-})
+// 	const message = rawLine.split(':')[1]
 
-bot.on('kicked', () => {
-	const embed = new MessageEmbed({
-		fields: [{
-			name: 'Bot was kicked',
-			value: 'Reconnecting shortly...',
-			inline: true
-		}],
-		color: '#ff4136'
-	})
+// 	try {
+// 		await webhook.send({
+// 			content: message,
+// 			username: username,
+// 			avatarURL: `https://mc-heads.net/avatar/${username}/256`
+// 		})
+// 	} catch (err) {
+// 		console.error(err)
+// 	}
+// })
 
-	webhook.send({ embeds: [embed] })
-	process.exit(0)
-})
+// bot.on('kicked', () => {
+// 	const embed = new MessageEmbed({
+// 		fields: [{
+// 			name: 'Bot was kicked',
+// 			value: 'Reconnecting shortly...',
+// 			inline: true
+// 		}],
+// 		color: '#ff4136'
+// 	})
 
-bot.on('error', (err) => {
-	const embed = new MessageEmbed({
-		fields: [
-			{
-				name: 'Bot encountered error',
-				value: 'Reconnecting shortly...',
-				inline: true
-			},
-			{
-				name: 'Error Message',
-				value: err.message,
-				inline: true
-			}
-		],
-		color: '#ff4136'
-	})
+// 	webhook.send({ embeds: [embed] })
+// 	process.exit(0)
+// })
 
-	webhook.send({ embeds: [embed] })
-	process.exit(0)
-})
+// bot.on('error', (err) => {
+// 	const embed = new MessageEmbed({
+// 		fields: [
+// 			{
+// 				name: 'Bot encountered error',
+// 				value: 'Reconnecting shortly...',
+// 				inline: true
+// 			},
+// 			{
+// 				name: 'Error Message',
+// 				value: err.message,
+// 				inline: true
+// 			}
+// 		],
+// 		color: '#ff4136'
+// 	})
 
-// Discord bot
-let webhook: Webhook
-let guild: Guild
-const client = new Client({
-	intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_MESSAGES,
-	allowedMentions: {
-		parse: ['roles', 'users']
-	}
-})
-client.login(process.env.DISCORD_TOKEN)
+// 	webhook.send({ embeds: [embed] })
+// 	process.exit(0)
+// })
 
-client.on('ready', async () => {
-	if (!client.user) {
-		console.error('No Discord user')
-		process.exit(4)
-	}
+// // Discord bot
+// let webhook: Webhook
+// let guild: Guild
+// const client = new Client({
+// 	intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_MESSAGES,
+// 	allowedMentions: {
+// 		parse: ['roles', 'users']
+// 	}
+// })
+// client.login(process.env.DISCORD_TOKEN)
 
-	console.log('Logged in:', `${client.user?.username}#${client.user?.discriminator}`)
-	const channel = client.channels.cache.get(process.env.DISCORD_CHANNEL!) as TextChannel
-	if (!channel) {
-		console.error('Couldn\'t find channel in guild cache')
-		process.exit(5)
-	}
+// client.on('ready', async () => {
+// 	if (!client.user) {
+// 		console.error('No Discord user')
+// 		process.exit(4)
+// 	}
 
-	const webhooks = await channel.fetchWebhooks()
-	for await (const webhook of webhooks.values()) {
-		await webhook.delete('Purging old Kittea Bot webhooks')
-	}
+// 	console.log('Logged in:', `${client.user?.username}#${client.user?.discriminator}`)
+// 	const channel = client.channels.cache.get(process.env.DISCORD_CHANNEL!) as TextChannel
+// 	if (!channel) {
+// 		console.error('Couldn\'t find channel in guild cache')
+// 		process.exit(5)
+// 	}
 
-	webhook = await channel.createWebhook('Kittea Bot', {
-		avatar: client.user.avatarURL()!
-	})
+// 	const webhooks = await channel.fetchWebhooks()
+// 	for await (const webhook of webhooks.values()) {
+// 		await webhook.delete('Purging old Kittea Bot webhooks')
+// 	}
 
-	let searchGuild = client.guilds.cache.get(webhook.guildId)
-	if (!searchGuild) {
-		console.error('Couldn\'t find guild in cache')
-		process.exit(6)
-	}
+// 	webhook = await channel.createWebhook('Kittea Bot', {
+// 		avatar: client.user.avatarURL()!
+// 	})
 
-	guild = searchGuild
+// 	let searchGuild = client.guilds.cache.get(webhook.guildId)
+// 	if (!searchGuild) {
+// 		console.error('Couldn\'t find guild in cache')
+// 		process.exit(6)
+// 	}
 
-	client.user.setStatus('idle')
-	client.user.setActivity({
-		name: 'food',
-		type: 'WATCHING'
-	})
+// 	guild = searchGuild
 
-	const embed = new MessageEmbed({
-		fields: [{
-			name: 'Discord bot is started',
-			value: 'Connecting to Hypixel',
-			inline: true
-		}],
-		color: '#7289da'
-	})
+// 	client.user.setStatus('idle')
+// 	client.user.setActivity({
+// 		name: 'food',
+// 		type: 'WATCHING'
+// 	})
 
-	webhook.send({ embeds: [embed] })
-})
+// 	const embed = new MessageEmbed({
+// 		fields: [{
+// 			name: 'Discord bot is started',
+// 			value: 'Connecting to Hypixel',
+// 			inline: true
+// 		}],
+// 		color: '#7289da'
+// 	})
 
-client.on('messageCreate', (message) => {
-	if (message.author.bot) {
-		return
-	}
+// 	webhook.send({ embeds: [embed] })
+// })
 
-	if (message.channel.id !== webhook.channelId) {
-		return
-	}
+// client.on('messageCreate', (message) => {
+// 	if (message.author.bot) {
+// 		return
+// 	}
 
-	if (!message.member) {
-		return
-	}
+// 	if (message.channel.id !== webhook.channelId) {
+// 		return
+// 	}
 
-	const content = message.content.split(' ').flatMap(value => {
-		if (value.startsWith('<@') && value.endsWith('>')) {
-			// Some mentions have <@! which we need to dynamically slice
-			const userID = value.slice(value.startsWith('<@!') ? 3 : 2, -1)
-			const user = guild.members.cache.get(userID)
+// 	if (!message.member) {
+// 		return
+// 	}
 
-			if (!user) {
-				return '@unknown'
-			} else {
-				return `@${user.displayName}`
-			}
-		}
+// 	const content = message.content.split(' ').flatMap(value => {
+// 		if (value.startsWith('<@') && value.endsWith('>')) {
+// 			// Some mentions have <@! which we need to dynamically slice
+// 			const userID = value.slice(value.startsWith('<@!') ? 3 : 2, -1)
+// 			const user = guild.members.cache.get(userID)
 
-		// Parsing channel mentions here
-		if (value.startsWith('<#') && value.endsWith('>')) {
-			const channelID = value.slice(2, -1)
-			const channel = guild.channels.cache.get(channelID)
+// 			if (!user) {
+// 				return '@unknown'
+// 			} else {
+// 				return `@${user.displayName}`
+// 			}
+// 		}
 
-			if (!channel) {
-				return '#unknown'
-			} else {
-				return `#${channel.name}`
-			}
-		}
+// 		// Parsing channel mentions here
+// 		if (value.startsWith('<#') && value.endsWith('>')) {
+// 			const channelID = value.slice(2, -1)
+// 			const channel = guild.channels.cache.get(channelID)
 
-		// Static and animated emojis
-		if ((value.startsWith('<:') || value.startsWith('<a:') )&& value.endsWith('>')) {
-			// Animated emojis start with <:a: so we need to dynamically parse
-			const emoji = value.slice(value.startsWith('<a:') ? 3 : 2, -1).split(':')[0]
-			return `:${emoji}:`
-		}
+// 			if (!channel) {
+// 				return '#unknown'
+// 			} else {
+// 				return `#${channel.name}`
+// 			}
+// 		}
 
-		return value
-	})
+// 		// Static and animated emojis
+// 		if ((value.startsWith('<:') || value.startsWith('<a:') )&& value.endsWith('>')) {
+// 			// Animated emojis start with <:a: so we need to dynamically parse
+// 			const emoji = value.slice(value.startsWith('<a:') ? 3 : 2, -1).split(':')[0]
+// 			return `:${emoji}:`
+// 		}
 
-	bot.chat(`>> ${message.member.displayName}: ${content.join(' ')}`)
-})
+// 		return value
+// 	})
 
-client.on('error', (err) => {
-	console.error(err.message)
-})
+// 	bot.chat(`>> ${message.member.displayName}: ${content.join(' ')}`)
+// })
+
+// client.on('error', (err) => {
+// 	console.error(err.message)
+// })
