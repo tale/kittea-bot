@@ -14,13 +14,16 @@ export default async function (bot: Bot, emitter: EventEmitter) {
 		'Guild Chat'
 	)
 
-	emitter.on('guild-chat', async (chat: Chat, rank: string, username: string, role: string, message: string) => {
-		console.log(chat, message, rank, username, role)
+	emitter.on('guild-chat', async (_chat: Chat, _rank: string, username: string, _role: string, message: string) => {
+		if (username === bot.username) {
+			return
+		}
+
 		try {
 			await discord.webhooks.chat.send({
 				content: message,
 				username: username,
-				avatarURL: `https://mc-heads.net/avatar/${username}/256`
+				avatarURL: `https://mc-heads.net/avatar/${username}`
 			})
 		} catch (err) {
 			console.error(err)
