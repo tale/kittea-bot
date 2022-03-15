@@ -10,7 +10,7 @@ export default async function (bot: KitteaClient) {
 		bot.user.setPresence({
 			status: 'online',
 			activities: [{
-				name: 'Bedwars',
+				name: 'Party Games',
 				url: 'https://tale.me',
 				type: 'COMPETING'
 			}]
