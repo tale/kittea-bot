@@ -1,20 +1,20 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^17.0.17
+  '@types/node': ^17.0.21
   discord.js: ^13.6.0
-  mineflayer: ^3.18.0
-  tsup: ^5.11.13
-  typescript: ^4.5.5
+  mineflayer: ^4.1.0
+  tsup: ^5.12.1
+  typescript: ^4.6.2
 
 dependencies:
   discord.js: 13.6.0
-  mineflayer: 3.18.0
+  mineflayer: 4.1.0
 
 devDependencies:
-  '@types/node': 17.0.17
-  tsup: 5.11.13_typescript@4.5.5
-  typescript: 4.5.5
+  '@types/node': 17.0.21
+  tsup: 5.12.1_typescript@4.6.2
+  typescript: 4.6.2
 
 packages:
 
@@ -27,8 +27,8 @@ packages:
       - supports-color
     dev: false
 
-  /@azure/msal-node/1.6.0_debug@4.3.3:
-    resolution: {integrity: sha512-RCPXVWsjqYZh7NB1pAJLn4ypHlLBulOjw5nKPLsJiaJJIXnN8kc6SMkK3S9/80DZCEBstvoRMz6zF50QZJUeOQ==}
+  /@azure/msal-node/1.7.0_debug@4.3.3:
+    resolution: {integrity: sha512-qDkW+Z4b0SGkkYrM1x+0s5WJ3z96vgiNZ20iwpmtCUHVfSrDiGFB8s8REKVaz7JZJi2L1s0vQRbUahly8EoGnw==}
     engines: {node: 10 || 12 || 14 || 16}
     dependencies:
       '@azure/msal-common': 6.1.0
@@ -45,11 +45,11 @@ packages:
     resolution: {integrity: sha512-ZTB8yJdJKrKlq44dpWkNUrAtEJEq0gqpb7ASdv4vmq6/mZal5kOv312hQ56I/vxwMre+VIkoHquNUAfnTbiYtg==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
-      '@sindresorhus/is': 4.4.0
+      '@sindresorhus/is': 4.6.0
       discord-api-types: 0.26.1
-      ts-mixer: 6.0.0
+      ts-mixer: 6.0.1
       tslib: 2.3.1
-      zod: 3.11.6
+      zod: 3.13.4
     dev: false
 
   /@discordjs/collection/0.4.0:
@@ -78,30 +78,30 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@sapphire/async-queue/1.2.0:
-    resolution: {integrity: sha512-O5ND5Ljpef86X5oy8zXorQ754TMjWALcPSAgPBu4+76HLtDTrNoDyzU2uGE2G4A8Wv51u0MXHzGQ0WZ4GMtpIw==}
+  /@sapphire/async-queue/1.3.0:
+    resolution: {integrity: sha512-z+CDw5X4UgIEpZL8KM+ThVx1i8V60HBg0l/oFewTNbQQeRDJHdVxHyJykv+SF1H+Rc8EkMS81VTWo95jVYgO/g==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dev: false
 
-  /@sindresorhus/is/4.4.0:
-    resolution: {integrity: sha512-QppPM/8l3Mawvh4rn9CNEYIU9bxpXUCRMaX9yUpvBk1nMKusLKpfXGDEKExKaPhLzcn3lzil7pR6rnJ11HgeRQ==}
+  /@sindresorhus/is/4.6.0:
+    resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
     dev: false
 
-  /@types/node-fetch/2.5.12:
-    resolution: {integrity: sha512-MKgC4dlq4kKNa/mYrwpKfzQMB5X3ee5U6fSprkKpToBqBmX4nFZL9cW5jl6sWn+xpRJ7ypWh2yyqqr8UUCstSw==}
+  /@types/node-fetch/2.6.1:
+    resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 17.0.17
+      '@types/node': 17.0.21
       form-data: 3.0.1
     dev: false
 
-  /@types/node/17.0.17:
-    resolution: {integrity: sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==}
+  /@types/node/17.0.21:
+    resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
 
-  /@types/ws/8.2.2:
-    resolution: {integrity: sha512-NOn5eIcgWLOo6qW8AcuLZ7G8PycXu0xTxxkS6Q18VWFxgPUSOwV0pBj2a/4viNZVu25i7RIB7GttdkAIUUXOOg==}
+  /@types/ws/8.5.3:
+    resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
     dependencies:
-      '@types/node': 17.0.17
+      '@types/node': 17.0.21
     dev: false
 
   /@xboxreplay/errors/0.1.0:
@@ -167,7 +167,7 @@ packages:
   /axios/0.21.4_debug@4.3.3:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.14.8_debug@4.3.3
+      follow-redirects: 1.14.9_debug@4.3.3
     transitivePeerDependencies:
       - debug
     dev: false
@@ -204,13 +204,13 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: false
 
-  /bundle-require/3.0.4_esbuild@0.14.21:
+  /bundle-require/3.0.4_esbuild@0.14.27:
     resolution: {integrity: sha512-VXG6epB1yrLAvWVQpl92qF347/UXmncQj7J3U8kZEbdVZ1ZkQyr4hYeL/9RvcE8vVVdp53dY78Fd/3pqfRqI1A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.13'
     dependencies:
-      esbuild: 0.14.21
+      esbuild: 0.14.27
       load-tsconfig: 0.2.3
     dev: true
 
@@ -301,9 +301,9 @@ packages:
     dependencies:
       '@discordjs/builders': 0.11.0
       '@discordjs/collection': 0.4.0
-      '@sapphire/async-queue': 1.2.0
-      '@types/node-fetch': 2.5.12
-      '@types/ws': 8.2.2
+      '@sapphire/async-queue': 1.3.0
+      '@types/node-fetch': 2.6.1
+      '@types/ws': 8.5.3
       discord-api-types: 0.26.1
       form-data: 4.0.0
       node-fetch: 2.6.7
@@ -324,8 +324,17 @@ packages:
     resolution: {integrity: sha1-5cx1eLEDLW7gHq/Nc3ZdsNtNwKY=}
     dev: false
 
-  /esbuild-android-arm64/0.14.21:
-    resolution: {integrity: sha512-Bqgld1TY0wZv8TqiQmVxQFgYzz8ZmyzT7clXBDZFkOOdRybzsnj8AZuK1pwcLVA7Ya6XncHgJqIao7NFd3s0RQ==}
+  /esbuild-android-64/0.14.27:
+    resolution: {integrity: sha512-LuEd4uPuj/16Y8j6kqy3Z2E9vNY9logfq8Tq+oTE2PZVuNs3M1kj5Qd4O95ee66yDGb3isaOCV7sOLDwtMfGaQ==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-android-arm64/0.14.27:
+    resolution: {integrity: sha512-E8Ktwwa6vX8q7QeJmg8yepBYXaee50OdQS3BFtEHKrzbV45H4foMOeEE7uqdjGQZFBap5VAqo7pvjlyA92wznQ==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [android]
@@ -333,8 +342,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-darwin-64/0.14.21:
-    resolution: {integrity: sha512-j+Eg+e13djzyYINVvAbOo2/zvZ2DivuJJTaBrJnJHSD7kUNuGHRkHoSfFjbI80KHkn091w350wdmXDNSgRjfYQ==}
+  /esbuild-darwin-64/0.14.27:
+    resolution: {integrity: sha512-czw/kXl/1ZdenPWfw9jDc5iuIYxqUxgQ/Q+hRd4/3udyGGVI31r29LCViN2bAJgGvQkqyLGVcG03PJPEXQ5i2g==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [darwin]
@@ -342,8 +351,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-darwin-arm64/0.14.21:
-    resolution: {integrity: sha512-nDNTKWDPI0RuoPj5BhcSB2z5EmZJJAyRtZLIjyXSqSpAyoB8eyAKXl4lB8U2P78Fnh4Lh1le/fmpewXE04JhBQ==}
+  /esbuild-darwin-arm64/0.14.27:
+    resolution: {integrity: sha512-BEsv2U2U4o672oV8+xpXNxN9bgqRCtddQC6WBh4YhXKDcSZcdNh7+6nS+DM2vu7qWIWNA4JbRG24LUUYXysimQ==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [darwin]
@@ -351,8 +360,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-freebsd-64/0.14.21:
-    resolution: {integrity: sha512-zIurkCHXhxELiDZtLGiexi8t8onQc2LtuE+S7457H/pP0g0MLRKMrsn/IN4LDkNe6lvBjuoZZi2OfelOHn831g==}
+  /esbuild-freebsd-64/0.14.27:
+    resolution: {integrity: sha512-7FeiFPGBo+ga+kOkDxtPmdPZdayrSzsV9pmfHxcyLKxu+3oTcajeZlOO1y9HW+t5aFZPiv7czOHM4KNd0tNwCA==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [freebsd]
@@ -360,8 +369,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-freebsd-arm64/0.14.21:
-    resolution: {integrity: sha512-wdxMmkJfbwcN+q85MpeUEamVZ40FNsBa9mPq8tAszDn8TRT2HoJvVRADPIIBa9SWWwlDChIMjkDKAnS3KS/sPA==}
+  /esbuild-freebsd-arm64/0.14.27:
+    resolution: {integrity: sha512-8CK3++foRZJluOWXpllG5zwAVlxtv36NpHfsbWS7TYlD8S+QruXltKlXToc/5ZNzBK++l6rvRKELu/puCLc7jA==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [freebsd]
@@ -369,8 +378,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-32/0.14.21:
-    resolution: {integrity: sha512-fmxvyzOPPh2xiEHojpCeIQP6pXcoKsWbz3ryDDIKLOsk4xp3GbpHIEAWP0xTeuhEbendmvBDVKbAVv3PnODXLg==}
+  /esbuild-linux-32/0.14.27:
+    resolution: {integrity: sha512-qhNYIcT+EsYSBClZ5QhLzFzV5iVsP1YsITqblSaztr3+ZJUI+GoK8aXHyzKd7/CKKuK93cxEMJPpfi1dfsOfdw==}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [linux]
@@ -378,8 +387,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-64/0.14.21:
-    resolution: {integrity: sha512-edZyNOv1ql+kpmlzdqzzDjRQYls+tSyi4QFi+PdBhATJFUqHsnNELWA9vMSzAaInPOEaVUTA5Ml28XFChcy4DA==}
+  /esbuild-linux-64/0.14.27:
+    resolution: {integrity: sha512-ESjck9+EsHoTaKWlFKJpPZRN26uiav5gkI16RuI8WBxUdLrrAlYuYSndxxKgEn1csd968BX/8yQZATYf/9+/qg==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [linux]
@@ -387,8 +396,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-arm/0.14.21:
-    resolution: {integrity: sha512-aSU5pUueK6afqmLQsbU+QcFBT62L+4G9hHMJDHWfxgid6hzhSmfRH9U/f+ymvxsSTr/HFRU4y7ox8ZyhlVl98w==}
+  /esbuild-linux-arm/0.14.27:
+    resolution: {integrity: sha512-JnnmgUBdqLQO9hoNZQqNHFWlNpSX82vzB3rYuCJMhtkuaWQEmQz6Lec1UIxJdC38ifEghNTBsF9bbe8dFilnCw==}
     engines: {node: '>=12'}
     cpu: [arm]
     os: [linux]
@@ -396,8 +405,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-arm64/0.14.21:
-    resolution: {integrity: sha512-t5qxRkq4zdQC0zXpzSB2bTtfLgOvR0C6BXYaRE/6/k8/4SrkZcTZBeNu+xGvwCU4b5dU9ST9pwIWkK6T1grS8g==}
+  /esbuild-linux-arm64/0.14.27:
+    resolution: {integrity: sha512-no6Mi17eV2tHlJnqBHRLekpZ2/VYx+NfGxKcBE/2xOMYwctsanCaXxw4zapvNrGE9X38vefVXLz6YCF8b1EHiQ==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [linux]
@@ -405,8 +414,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-mips64le/0.14.21:
-    resolution: {integrity: sha512-jLZLQGCNlUsmIHtGqNvBs3zN+7a4D9ckf0JZ+jQTwHdZJ1SgV9mAjbB980OFo66LoY+WeM7t3WEnq3FjI1zw4A==}
+  /esbuild-linux-mips64le/0.14.27:
+    resolution: {integrity: sha512-NolWP2uOvIJpbwpsDbwfeExZOY1bZNlWE/kVfkzLMsSgqeVcl5YMen/cedRe9mKnpfLli+i0uSp7N+fkKNU27A==}
     engines: {node: '>=12'}
     cpu: [mips64el]
     os: [linux]
@@ -414,8 +423,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-ppc64le/0.14.21:
-    resolution: {integrity: sha512-4TWxpK391en2UBUw6GSrukToTDu6lL9vkm3Ll40HrI08WG3qcnJu7bl8e1+GzelDsiw1QmfAY/nNvJ6iaHRpCQ==}
+  /esbuild-linux-ppc64le/0.14.27:
+    resolution: {integrity: sha512-/7dTjDvXMdRKmsSxKXeWyonuGgblnYDn0MI1xDC7J1VQXny8k1qgNp6VmrlsawwnsymSUUiThhkJsI+rx0taNA==}
     engines: {node: '>=12'}
     cpu: [ppc64]
     os: [linux]
@@ -423,8 +432,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-riscv64/0.14.21:
-    resolution: {integrity: sha512-fElngqOaOfTsF+u+oetDLHsPG74vB2ZaGZUqmGefAJn3a5z9Z2pNa4WpVbbKgHpaAAy5tWM1m1sbGohj6Ki6+Q==}
+  /esbuild-linux-riscv64/0.14.27:
+    resolution: {integrity: sha512-D+aFiUzOJG13RhrSmZgrcFaF4UUHpqj7XSKrIiCXIj1dkIkFqdrmqMSOtSs78dOtObWiOrFCDDzB24UyeEiNGg==}
     engines: {node: '>=12'}
     cpu: [riscv64]
     os: [linux]
@@ -432,8 +441,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-linux-s390x/0.14.21:
-    resolution: {integrity: sha512-brleZ6R5fYv0qQ7ZBwenQmP6i9TdvJCB092c/3D3pTLQHBGHJb5zWgKxOeS7bdHzmLy6a6W7GbFk6QKpjyD6QA==}
+  /esbuild-linux-s390x/0.14.27:
+    resolution: {integrity: sha512-CD/D4tj0U4UQjELkdNlZhQ8nDHU5rBn6NGp47Hiz0Y7/akAY5i0oGadhEIg0WCY/HYVXFb3CsSPPwaKcTOW3bg==}
     engines: {node: '>=12'}
     cpu: [s390x]
     os: [linux]
@@ -441,8 +450,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-netbsd-64/0.14.21:
-    resolution: {integrity: sha512-nCEgsLCQ8RoFWVV8pVI+kX66ICwbPP/M9vEa0NJGIEB/Vs5sVGMqkf67oln90XNSkbc0bPBDuo4G6FxlF7PN8g==}
+  /esbuild-netbsd-64/0.14.27:
+    resolution: {integrity: sha512-h3mAld69SrO1VoaMpYl3a5FNdGRE/Nqc+E8VtHOag4tyBwhCQXxtvDDOAKOUQexBGca0IuR6UayQ4ntSX5ij1Q==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [netbsd]
@@ -450,8 +459,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-openbsd-64/0.14.21:
-    resolution: {integrity: sha512-h9zLMyVD0T73MDTVYIb/qUTokwI6EJH9O6wESuTNq6+XpMSr6C5aYZ4fvFKdNELW+Xsod+yDS2hV2JTUAbFrLA==}
+  /esbuild-openbsd-64/0.14.27:
+    resolution: {integrity: sha512-xwSje6qIZaDHXWoPpIgvL+7fC6WeubHHv18tusLYMwL+Z6bEa4Pbfs5IWDtQdHkArtfxEkIZz77944z8MgDxGw==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [openbsd]
@@ -459,8 +468,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-sunos-64/0.14.21:
-    resolution: {integrity: sha512-Kl+7Cot32qd9oqpLdB1tEGXEkjBlijrIxMJ0+vlDFaqsODutif25on0IZlFxEBtL2Gosd4p5WCV1U7UskNQfXA==}
+  /esbuild-sunos-64/0.14.27:
+    resolution: {integrity: sha512-/nBVpWIDjYiyMhuqIqbXXsxBc58cBVH9uztAOIfWShStxq9BNBik92oPQPJ57nzWXRNKQUEFWr4Q98utDWz7jg==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [sunos]
@@ -468,8 +477,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-windows-32/0.14.21:
-    resolution: {integrity: sha512-V7vnTq67xPBUCk/9UtlolmQ798Ecjdr1ZoI1vcSgw7M82aSSt0eZdP6bh5KAFZU8pxDcx3qoHyWQfHYr11f22A==}
+  /esbuild-windows-32/0.14.27:
+    resolution: {integrity: sha512-Q9/zEjhZJ4trtWhFWIZvS/7RUzzi8rvkoaS9oiizkHTTKd8UxFwn/Mm2OywsAfYymgUYm8+y2b+BKTNEFxUekw==}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [win32]
@@ -477,8 +486,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-windows-64/0.14.21:
-    resolution: {integrity: sha512-kDgHjKOHwjfJDCyRGELzVxiP/RBJBTA+wyspf78MTTJQkyPuxH2vChReNdWc+dU2S4gIZFHMdP1Qrl/k22ZmaA==}
+  /esbuild-windows-64/0.14.27:
+    resolution: {integrity: sha512-b3y3vTSl5aEhWHK66ngtiS/c6byLf6y/ZBvODH1YkBM+MGtVL6jN38FdHUsZasCz9gFwYs/lJMVY9u7GL6wfYg==}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
@@ -486,8 +495,8 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-windows-arm64/0.14.21:
-    resolution: {integrity: sha512-8Sbo0zpzgwWrwjQYLmHF78f7E2xg5Ve63bjB2ng3V2aManilnnTGaliq2snYg+NOX60+hEvJHRdVnuIAHW0lVw==}
+  /esbuild-windows-arm64/0.14.27:
+    resolution: {integrity: sha512-I/reTxr6TFMcR5qbIkwRGvldMIaiBu2+MP0LlD7sOlNXrfqIl9uNjsuxFPGEG4IRomjfQ5q8WT+xlF/ySVkqKg==}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [win32]
@@ -495,31 +504,32 @@ packages:
     dev: true
     optional: true
 
-  /esbuild/0.14.21:
-    resolution: {integrity: sha512-7WEoNMBJdLN993dr9h0CpFHPRc3yFZD+EAVY9lg6syJJ12gc5fHq8d75QRExuhnMkT2DaRiIKFThRvDWP+fO+A==}
+  /esbuild/0.14.27:
+    resolution: {integrity: sha512-MZQt5SywZS3hA9fXnMhR22dv0oPGh6QtjJRIYbgL1AeqAoQZE+Qn5ppGYQAoHv/vq827flj4tIJ79Mrdiwk46Q==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      esbuild-android-arm64: 0.14.21
-      esbuild-darwin-64: 0.14.21
-      esbuild-darwin-arm64: 0.14.21
-      esbuild-freebsd-64: 0.14.21
-      esbuild-freebsd-arm64: 0.14.21
-      esbuild-linux-32: 0.14.21
-      esbuild-linux-64: 0.14.21
-      esbuild-linux-arm: 0.14.21
-      esbuild-linux-arm64: 0.14.21
-      esbuild-linux-mips64le: 0.14.21
-      esbuild-linux-ppc64le: 0.14.21
-      esbuild-linux-riscv64: 0.14.21
-      esbuild-linux-s390x: 0.14.21
-      esbuild-netbsd-64: 0.14.21
-      esbuild-openbsd-64: 0.14.21
-      esbuild-sunos-64: 0.14.21
-      esbuild-windows-32: 0.14.21
-      esbuild-windows-64: 0.14.21
-      esbuild-windows-arm64: 0.14.21
+      esbuild-android-64: 0.14.27
+      esbuild-android-arm64: 0.14.27
+      esbuild-darwin-64: 0.14.27
+      esbuild-darwin-arm64: 0.14.27
+      esbuild-freebsd-64: 0.14.27
+      esbuild-freebsd-arm64: 0.14.27
+      esbuild-linux-32: 0.14.27
+      esbuild-linux-64: 0.14.27
+      esbuild-linux-arm: 0.14.27
+      esbuild-linux-arm64: 0.14.27
+      esbuild-linux-mips64le: 0.14.27
+      esbuild-linux-ppc64le: 0.14.27
+      esbuild-linux-riscv64: 0.14.27
+      esbuild-linux-s390x: 0.14.27
+      esbuild-netbsd-64: 0.14.27
+      esbuild-openbsd-64: 0.14.27
+      esbuild-sunos-64: 0.14.27
+      esbuild-windows-32: 0.14.27
+      esbuild-windows-64: 0.14.27
+      esbuild-windows-arm64: 0.14.27
     dev: true
 
   /execa/5.1.1:
@@ -569,8 +579,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /follow-redirects/1.14.8_debug@4.3.3:
-    resolution: {integrity: sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==}
+  /follow-redirects/1.14.9_debug@4.3.3:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -587,7 +597,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.34
+      mime-types: 2.1.35
     dev: false
 
   /form-data/4.0.0:
@@ -596,7 +606,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.34
+      mime-types: 2.1.35
     dev: false
 
   /fs.realpath/1.0.0:
@@ -629,7 +639,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -709,8 +719,8 @@ packages:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
 
-  /jose/4.5.0:
-    resolution: {integrity: sha512-GFcVFQwYQKbQTUOo2JlpFGXTkgBw26uzDsRMD2q1WgSKNSnpKS9Ug7bdQ8dS+p4sZHNH6iRPu6WK2jLIjspaMA==}
+  /jose/4.6.0:
+    resolution: {integrity: sha512-0hNAkhMBNi4soKSAX4zYOFV+aqJlEz/4j4fregvasJzEVtjDChvWqRjPvHwLqr5hx28Ayr6bsOs1Kuj87V0O8w==}
     dev: false
 
   /joycon/3.1.1:
@@ -828,16 +838,16 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /mime-db/1.51.0:
-    resolution: {integrity: sha512-5y8A56jg7XVQx2mbv1lu49NR4dokRnhZYTtL+KGfaa27uq4pSTXkwQkFJl4pkRMyNFz/EtYDSkiiEHx3F7UN6g==}
+  /mime-db/1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
     dev: false
 
-  /mime-types/2.1.34:
-    resolution: {integrity: sha512-6cP692WwGIs9XXdOO4++N+7qjqv0rqxxVvJ3VHPh/Sc9mVZcQP+ZGhkKiTvWMQRr2tbHkJP/Yn7Y0npb3ZBs4A==}
+  /mime-types/2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
     dependencies:
-      mime-db: 1.51.0
+      mime-db: 1.52.0
     dev: false
 
   /mimic-fn/2.1.0:
@@ -845,17 +855,17 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /minecraft-data/2.113.0:
-    resolution: {integrity: sha512-KvFyHOalKVBXYkzvzin7Li0hP1VaLrAJ3z+LipTVjZlda1HZ1Moa8rHfeNQk9ZwdgGnJdPqCL/mPlGYQlHRD2g==}
+  /minecraft-data/2.220.0:
+    resolution: {integrity: sha512-6/1TxrX9jf8z8aRxWtB9IiDy6O3t6Yor/qGxCDB8ibahf/Ss5HNaPjjjjATLrdT2KrIWywv5oc4eSZ2bfXlDmQ==}
     dev: false
 
   /minecraft-folder-path/1.2.0:
     resolution: {integrity: sha512-qaUSbKWoOsH9brn0JQuBhxNAzTDMwrOXorwuRxdJKKKDYvZhtml+6GVCUrY5HRiEsieBEjCUnhVpDuQiKsiFaw==}
     dev: false
 
-  /minecraft-protocol/1.30.0:
-    resolution: {integrity: sha512-Zi/TAYyLQrGV8HjBAs2z4DnusezcVdgxEVZH0cxilOElI/xJuPZ7fwXhixHPvyJnuK3RPyCvwOUjhHX27tGcoA==}
-    engines: {node: '>=6'}
+  /minecraft-protocol/1.32.0:
+    resolution: {integrity: sha512-KIg/SnKagSe2GtVjvWealobTkC1VLPCRYpzIZd4l+rbo3fND1e1NBmfZVsawbByYwK6/STKODkMJgk763FejTQ==}
+    engines: {node: '>=14'}
     dependencies:
       aes-js: 3.1.2
       buffer-equal: 1.0.0
@@ -863,13 +873,13 @@ packages:
       endian-toggle: 0.0.0
       lodash.get: 4.4.2
       lodash.merge: 4.6.2
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       minecraft-folder-path: 1.2.0
       node-fetch: 2.6.7
       node-rsa: 0.4.2
-      prismarine-auth: 1.4.1_debug@4.3.3
+      prismarine-auth: 1.5.0
       prismarine-nbt: 2.2.0
-      protodef: 1.14.0
+      protodef: 1.15.0
       readable-stream: 3.6.0
       uuid-1345: 1.0.2
       yggdrasil: 1.6.1
@@ -878,24 +888,24 @@ packages:
       - supports-color
     dev: false
 
-  /mineflayer/3.18.0:
-    resolution: {integrity: sha512-eHLr3rPqGtZuoAWrocMY+WBGxZ1ao8OHAxBr3L8XFT4cZVybjLbEqs/NAa2RFTKTzhO23kzxt+qsmxkLL7Oxiw==}
+  /mineflayer/4.1.0:
+    resolution: {integrity: sha512-Av6qote/cmWrlCB4WArleKHmh8zrU4SYOygdLVi9OglUbsUnaIGPkbSrneL0vhW/io+1WR6/OjHts8W8Hc73Dg==}
     engines: {node: '>=14'}
     dependencies:
-      minecraft-data: 2.113.0
-      minecraft-protocol: 1.30.0
-      prismarine-biome: 1.2.0_minecraft-data@2.113.0
-      prismarine-block: 1.13.1_minecraft-data@2.113.0
-      prismarine-chat: 1.5.0
-      prismarine-chunk: 1.29.0
-      prismarine-entity: 2.0.0
-      prismarine-item: 1.11.2_minecraft-data@2.113.0
+      minecraft-data: 2.220.0
+      minecraft-protocol: 1.32.0
+      prismarine-biome: 1.2.1_minecraft-data@2.220.0
+      prismarine-block: 1.15.0_minecraft-data@2.220.0
+      prismarine-chat: 1.6.0
+      prismarine-chunk: 1.30.0
+      prismarine-entity: 2.1.0
+      prismarine-item: 1.11.3
       prismarine-nbt: 2.2.0
       prismarine-physics: 1.4.0
-      prismarine-recipe: 1.1.0_minecraft-data@2.113.0
+      prismarine-recipe: 1.1.0_minecraft-data@2.220.0
       prismarine-windows: 2.4.3
       prismarine-world: 3.6.0
-      protodef: 1.14.0
+      protodef: 1.15.0
       typed-emitter: 1.4.0
       vec3: 0.1.7
     transitivePeerDependencies:
@@ -904,8 +914,8 @@ packages:
       - supports-color
     dev: false
 
-  /minimatch/3.0.5:
-    resolution: {integrity: sha512-tUpxzX0VAzJHjLu0xUfFv1gwVp9ba3IOuRAVH2EGuRW8a5emA2FlACLqiT/lDVtS1W+TGNwqz3sWaNyLgDJWuw==}
+  /minimatch/3.1.2:
+    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
     dev: true
@@ -1031,125 +1041,127 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /prismarine-auth/1.4.1_debug@4.3.3:
-    resolution: {integrity: sha512-IyFz+TWkngtRPs19MWP/7dYU1vheiASoil5d7amvIXhbK4zWb/w7uGcwLvOO0fwX9qw5hCt/JKimPrRcw8La0w==}
+  /prismarine-auth/1.5.0:
+    resolution: {integrity: sha512-b3vDr53ac1mdp2AyRDVVKGp3eqXKKNXuZZ0Cxjc2HzVxhurPhRBETOM3/nrgGr9yt7FdI2+/60w7w5B55crJiA==}
     dependencies:
-      '@azure/msal-node': 1.6.0_debug@4.3.3
+      '@azure/msal-node': 1.7.0_debug@4.3.3
       '@xboxreplay/xboxlive-auth': 3.3.3_debug@4.3.3
-      jose: 4.5.0
+      debug: 4.3.3
+      jose: 4.6.0
       node-fetch: 2.6.7
       smart-buffer: 4.2.0
       uuid-1345: 1.0.2
     transitivePeerDependencies:
-      - debug
       - encoding
       - supports-color
     dev: false
 
-  /prismarine-biome/1.2.0_a2c0bfdfaf1d5fe4b68d9cc08186cf5f:
-    resolution: {integrity: sha512-sMeK4HkZkqTWy5kx0qvzvNPz/MmR/V2G9ouhnCjgm2pvckW9QqlyO/H+7RIjdn+jDBlHRteLKKTls76udXsR1A==}
+  /prismarine-biome/1.2.1_4d56a6996ed36a6005359fbe30de62d8:
+    resolution: {integrity: sha512-bfClX/NKMDkmA//0o1za3Nmcd1krmnv8hmjIYRS435dQvDJ2MKmCkDGUJ5CTy2epB976CDgzj9h1JT1a8MUn1Q==}
     peerDependencies:
       minecraft-data: ^2.0.0
       prismarine-registry: ^1.1.0
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       prismarine-registry: 1.1.0
     dev: false
 
-  /prismarine-biome/1.2.0_minecraft-data@2.113.0:
-    resolution: {integrity: sha512-sMeK4HkZkqTWy5kx0qvzvNPz/MmR/V2G9ouhnCjgm2pvckW9QqlyO/H+7RIjdn+jDBlHRteLKKTls76udXsR1A==}
+  /prismarine-biome/1.2.1_minecraft-data@2.220.0:
+    resolution: {integrity: sha512-bfClX/NKMDkmA//0o1za3Nmcd1krmnv8hmjIYRS435dQvDJ2MKmCkDGUJ5CTy2epB976CDgzj9h1JT1a8MUn1Q==}
     peerDependencies:
       minecraft-data: ^2.0.0
       prismarine-registry: ^1.1.0
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
     dev: false
 
-  /prismarine-block/1.13.1_minecraft-data@2.113.0:
-    resolution: {integrity: sha512-V0J03UG4wK7G7idXsFqt84DvQ90sPZQLi64T3ZmOXmRcjjIVahiAUzqfmeO7S8GJ/3NQCJ9b9cRzGNRtl/3a5A==}
+  /prismarine-block/1.15.0_minecraft-data@2.220.0:
+    resolution: {integrity: sha512-h9vJK9N2sg5FaZbWf4oBQK+TWqFlDc7grRUPRpGt8Lv6948x2u6JYgcSrRGY1LUsyR8B1ii/M8b686GEU6VPbA==}
     peerDependencies:
-      minecraft-data: ^2.62.1
+      minecraft-data: ^2.113.1
     dependencies:
-      minecraft-data: 2.113.0
-      prismarine-biome: 1.2.0_a2c0bfdfaf1d5fe4b68d9cc08186cf5f
-      prismarine-chat: 1.5.0
-      prismarine-item: 1.11.2_minecraft-data@2.113.0
+      minecraft-data: 2.220.0
+      prismarine-biome: 1.2.1_4d56a6996ed36a6005359fbe30de62d8
+      prismarine-chat: 1.6.0
+      prismarine-item: 1.11.3
       prismarine-nbt: 2.2.0
       prismarine-registry: 1.1.0
     dev: false
 
-  /prismarine-chat/1.5.0:
-    resolution: {integrity: sha512-rdztHiG5qJngU3O3beNiO+7JZGtZMIrzZAYVUcMK4/l7RV1A6wT3ifFpMwMHc1u2b7z6sRHELwFw5q63jEppeA==}
+  /prismarine-chat/1.6.0:
+    resolution: {integrity: sha512-vgA0Iq2G4/GE4VNvtvQL/3XCHzCXi8rCb4WWyM2DR4q/7vg+4G93ZtKxphy7wlgPbB3qzQLneZz99O67TkZahA==}
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       mojangson: 2.0.2
-      prismarine-item: 1.11.2_minecraft-data@2.113.0
+      prismarine-item: 1.11.3
       prismarine-nbt: 2.2.0
       sprintf-js: 1.1.2
     dev: false
 
-  /prismarine-chunk/1.29.0:
-    resolution: {integrity: sha512-dTC5j9ixp8JjI0acOe1tGXE19GVm5dAX7qsvfbLueFNPmW2BNVzIzsgVjnfwGqSymr4dG/BIG83xek3+r6sbYQ==}
+  /prismarine-chunk/1.30.0:
+    resolution: {integrity: sha512-hq8Vtslm79nI/KnMWwbd5nHEUURF4kkIW1UPjNI5YzwFKJcb8Z6kRkozCxFr8L1Qk/A7fxdKGHaRxTMZeor+1g==}
     engines: {node: '>=14'}
     dependencies:
-      minecraft-data: 2.113.0
-      prismarine-block: 1.13.1_minecraft-data@2.113.0
+      minecraft-data: 2.220.0
+      prismarine-biome: 1.2.1_4d56a6996ed36a6005359fbe30de62d8
+      prismarine-block: 1.15.0_minecraft-data@2.220.0
       prismarine-registry: 1.1.0
       smart-buffer: 4.2.0
       uint4: 0.1.2
       vec3: 0.1.7
+      xxhash-wasm: 0.4.2
     dev: false
 
-  /prismarine-entity/2.0.0:
-    resolution: {integrity: sha512-6TPldMDiUhK8drNHKVW5783IHkkgHQWQwPO9NPRUXyZNKYzhqLKeTxOAsmtcR9mjTORbrILzJUyB0qZgSyfOrA==}
+  /prismarine-entity/2.1.0:
+    resolution: {integrity: sha512-EK+YjhdVAwf7M/ZoVLjPB2Vm4YVapzzYRyWrAA2lyyAKXN1ktxZwkPOM16Vx1VN+JhGYi9MYc2HVTxY2R4QWLA==}
     dependencies:
-      prismarine-chat: 1.5.0
+      minecraft-data: 2.220.0
+      prismarine-chat: 1.6.0
+      prismarine-item: 1.11.3
       vec3: 0.1.7
     dev: false
 
-  /prismarine-item/1.11.2_minecraft-data@2.113.0:
-    resolution: {integrity: sha512-OMkI/4g4N+Z0+63MIVbnxRZOjjyGs9E0KZ/v5UQZ0M6ZsxTGLHl2IqQAxVr59GrM4DsB8S+2Cp3A7t3EKZ1asQ==}
-    peerDependencies:
-      minecraft-data: ^2.79.0
+  /prismarine-item/1.11.3:
+    resolution: {integrity: sha512-3zgExGF6hektrRlvarkh+il2wp4EyPzi7oJiOxabeaqSfc17taBbJubPJeEZHdi7sy4sB0diF10PgrESD8mc3Q==}
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       prismarine-nbt: 2.2.0
     dev: false
 
   /prismarine-nbt/2.2.0:
     resolution: {integrity: sha512-6UgW9gkurSs2+L6el6bVHvK5BmfAdMv9ixY+zn4GSaTSOzuWumspErpStxo9RbeixmVq66dd0OQu1tHYXVkX8g==}
     dependencies:
-      protodef: 1.14.0
+      protodef: 1.15.0
     dev: false
 
   /prismarine-physics/1.4.0:
     resolution: {integrity: sha512-RiBl/9WFg5TBwoAj1pDWEBF4A7iauJ4WK3JoUfOsr3tO9EPGNR8pEPMJ2VftG2OzDIz70jjsg7L8ISyBva8Ncw==}
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       prismarine-nbt: 2.2.0
       vec3: 0.1.7
     dev: false
 
-  /prismarine-recipe/1.1.0_minecraft-data@2.113.0:
+  /prismarine-recipe/1.1.0_minecraft-data@2.220.0:
     resolution: {integrity: sha512-eFmriEWoe6S6OSVbOJnsXpaBuzeIzjaGymDUTCtrOu80734NWKI7outdLI6R2ztJ+f2PFIkFmpkazAdScStGNA==}
     peerDependencies:
       minecraft-data: ^2.0.0
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
     dev: false
 
   /prismarine-registry/1.1.0:
     resolution: {integrity: sha512-zCI4LRRGATsqz2KQ6JKbgWMCTAsYcSDq/GuUQohS5XVW223byzZNHqwsqZLBScAvLnvWmfhe/Ok/UgJcrXxfRw==}
     dependencies:
-      minecraft-data: 2.113.0
+      minecraft-data: 2.220.0
       prismarine-nbt: 2.2.0
     dev: false
 
   /prismarine-windows/2.4.3:
     resolution: {integrity: sha512-cwY8Pw8LcfWmTMlxg88hwj4JbEqqKivuwbWnu/jy9Qd6dPI80AtLBSrxsdVkJ9siy2imc1xP5vs+RxInzZo+TA==}
     dependencies:
-      minecraft-data: 2.113.0
-      prismarine-item: 1.11.2_minecraft-data@2.113.0
+      minecraft-data: 2.220.0
+      prismarine-item: 1.11.3
     dev: false
 
   /prismarine-world/3.6.0:
@@ -1166,8 +1178,8 @@ packages:
       ajv: 6.12.6
     dev: false
 
-  /protodef/1.14.0:
-    resolution: {integrity: sha512-rL1WRlBC8LbAgBTa401eHMqnkX6zy1pHgS4kTSJVJ8rwP/AgVuWijGE3S3XHRkRjB/+4U1jMTqRdmtGdIqVOKQ==}
+  /protodef/1.15.0:
+    resolution: {integrity: sha512-bZ2Omw8dT+DACjJHLrBWZlqN4MlT9g9oSpJDdkUAJOStUzgJp+Zn42FJfPUdwutUxjaxA0PftN0PDlNa2XbneA==}
     engines: {node: '>=14'}
     dependencies:
       lodash.get: 4.4.2
@@ -1228,8 +1240,8 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /rollup/2.67.2:
-    resolution: {integrity: sha512-hoEiBWwZtf1QdK3jZIq59L0FJj4Fiv4RplCO4pvCRC86qsoFurWB4hKQIjoRf3WvJmk5UZ9b0y5ton+62fC7Tw==}
+  /rollup/2.70.1:
+    resolution: {integrity: sha512-CRYsI5EuzLbXdxC6RnYhOuRdtz4bhejPMSWjsFLfVM/7w/85n2szZv6yExqUXsBdz5KT8eoubeyDUDjhLHEslA==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1343,16 +1355,16 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-mixer/6.0.0:
-    resolution: {integrity: sha512-nXIb1fvdY5CBSrDIblLn73NW0qRDk5yJ0Sk1qPBF560OdJfQp9jhl+0tzcY09OZ9U+6GpeoI9RjwoIKFIoB9MQ==}
+  /ts-mixer/6.0.1:
+    resolution: {integrity: sha512-hvE+ZYXuINrx6Ei6D6hz+PTim0Uf++dYbK9FFifLNwQj+RwKquhQpn868yZsCtJYiclZF1u8l6WZxxKi+vv7Rg==}
     dev: false
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: false
 
-  /tsup/5.11.13_typescript@4.5.5:
-    resolution: {integrity: sha512-NVMK01gVmojZn7+iZwxRK1CzW2BIabaVMyEjs7Nm9lm4DrSf7IAqs2F3fg0vT7rH72x1cIBsW9U/TlWrCvHVQQ==}
+  /tsup/5.12.1_typescript@4.6.2:
+    resolution: {integrity: sha512-vI7E4T6+6n5guQ9UKUOkQmzd1n4V9abGK71lbnzJMLJspbkNby5zlwWvgvHafLdYCb1WXpjFuqqmNLjBA0Wz3g==}
     hasBin: true
     peerDependencies:
       typescript: ^4.1.0
@@ -1360,21 +1372,21 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 3.0.4_esbuild@0.14.21
+      bundle-require: 3.0.4_esbuild@0.14.27
       cac: 6.7.12
       chokidar: 3.5.3
       debug: 4.3.3
-      esbuild: 0.14.21
+      esbuild: 0.14.27
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
       postcss-load-config: 3.1.3
       resolve-from: 5.0.0
-      rollup: 2.67.2
+      rollup: 2.70.1
       source-map: 0.7.3
       sucrase: 3.20.3
       tree-kill: 1.2.2
-      typescript: 4.5.5
+      typescript: 4.6.2
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -1384,8 +1396,8 @@ packages:
     resolution: {integrity: sha512-weBmoo3HhpKGgLBOYwe8EB31CzDFuaK7CCL+axXhUYhn4jo6DSkHnbefboCF5i4DQ2aMFe0C/FdTWcPdObgHyg==}
     dev: false
 
-  /typescript/4.5.5:
-    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
+  /typescript/4.6.2:
+    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -1455,6 +1467,10 @@ packages:
         optional: true
     dev: false
 
+  /xxhash-wasm/0.4.2:
+    resolution: {integrity: sha512-/eyHVRJQCirEkSZ1agRSCwriMhwlyUcFkXD5TPVSLP+IPzjsqMVzZwdoczLp1SoQU0R3dxz1RpIK+4YNQbCVOA==}
+    dev: false
+
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
@@ -1469,6 +1485,6 @@ packages:
       - encoding
     dev: false
 
-  /zod/3.11.6:
-    resolution: {integrity: sha512-daZ80A81I3/9lIydI44motWe6n59kRBfNzTuS2bfzVh1nAXi667TOTWWtatxyG+fwgNUiagSj/CWZwRRbevJIg==}
+  /zod/3.13.4:
+    resolution: {integrity: sha512-LZRucWt4j/ru5azOkJxCfpR87IyFDn8h2UODdqvXzZLb3K7bb9chUrUIGTy3BPsr8XnbQYfQ5Md5Hu2OYIo1mg==}
     dev: false
