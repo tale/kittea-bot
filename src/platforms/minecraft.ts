@@ -7,7 +7,7 @@ export const bot = createBot({
 	host: 'mc.hypixel.net',
 	version: '1.16.4',
 	hideErrors: true,
-	auth: 'mojang',
+	auth: 'microsoft',
 	defaultChatPatterns: false,
 	viewDistance: 'tiny'
 })

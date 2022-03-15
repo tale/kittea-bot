@@ -1,7 +1,8 @@
-import { Client, Intents, Webhook } from 'discord.js'
+import { Channel, Client, Intents, TextChannel, Webhook } from 'discord.js'
 import { discord } from 'triggers'
 
 export class KitteaClient extends Client {
+	channel!: TextChannel
 	webhooks!: {
 		// notify: Webhook
 		// staff: Webhook
