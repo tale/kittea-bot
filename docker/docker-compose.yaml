@@ -8,8 +8,9 @@ services:
     volumes:
       - ../src:/app/src
     environment:
-      MC_EMAIL: colelewis2324@gmail.com
-      MC_PASSWORD: theseareMYSFAs
-      DISCORD_TOKEN: ODUxODYzMjQ0Nzc1NjIwNjQ4.YL-deA.6A1GQpEi4u6KvVV0nL662UybCrU
-      DISCORD_CHANNEL: 867137370145685505
+      NODE_ENV: development
+      MC_EMAIL: <microsoft-email>
+      MC_PASSWORD: <microsoft-password>
+      DISCORD_TOKEN: <bot-token>
+      DISCORD_CHANNEL: <chat-channel>
 
