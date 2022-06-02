@@ -16,27 +16,40 @@ export default async function (bot: KitteaClient) {
 			}]
 		})
 
-		const channel = bot.channels.cache.get(process.env.DISCORD_CHANNEL!) as TextChannel
-		if (!channel) {
-			console.error('Couldn\'t find channel in guild cache')
+		const chatChannel = bot.channels.cache.get(process.env.DISCORD_CHAT_CHANNEL!) as TextChannel
+		if (!chatChannel) {
+			console.error('Couldn\'t find chat channel in guild cache')
 			process.exit(5)
 		}
 
-		const webhooks = await channel.fetchWebhooks()
-		for await (const webhook of webhooks.values()) {
+		for await (const webhook of (await chatChannel.fetchWebhooks()).values()) {
 			await webhook.delete('Purging old Kittea Bot webhooks')
 		}
 
-		bot.webhooks = {
-			chat: await channel.createWebhook('Kittea Bot', {
-				avatar: bot.user.avatarURL()
+		const notifyChannel = bot.channels.cache.get(process.env.DISCORD_NOTIFY_CHANNEL!) as TextChannel
+		if (!notifyChannel) {
+			console.error('Couldn\'t find notification channel in guild cache')
+		}
+
+		let notifyWebhook = (await notifyChannel.fetchWebhooks()).filter(webhook => webhook.name === 'Kittea Bot').first()
+
+		if (!notifyWebhook) {
+			notifyWebhook = await notifyChannel.createWebhook('Kittea Bot', {
+				avatar: bot.user.displayAvatarURL()
 			})
 		}
 
-		bot.channel = channel
+		bot.webhooks = {
+			chat: await chatChannel.createWebhook('Kittea Bot', {
+				avatar: bot.user.avatarURL()
+			}),
+			staff: notifyWebhook
+		}
+
+		bot.channel = chatChannel
 
 		const { username, discriminator } = bot.user
 		console.log('Logged in as %s#%s', username, discriminator)
-		await channel.send(':yellow_circle: Restarting...')
+		await chatChannel.send(':yellow_circle: Restarting...')
 	})
 }
