@@ -9,3 +9,16 @@ RUN npm i -g pnpm && \
 	rm -rf ./src
 
 ENTRYPOINT [ "pnpm", "start" ]
+
+LABEL org.opencontainers.image.created=${BUILD_DATE}
+LABEL org.opencontainers.image.authors="Aarnav Tale <aarnav@tale.me>"
+LABEL org.opencontainers.image.url="https://aerum.co/bots/kittea"
+LABEL org.opencontainers.image.source="https://github.com/tale/kittea-bot"
+LABEL org.opencontainers.image.version="1.0"
+LABEL org.opencontainers.image.revision=${GIT_STATE}
+LABEL org.opencontainers.image.vendor="Aerum LLC"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.ref.name="aerum.co/bots/kittea"
+LABEL org.opencontainers.image.title="Kittea Bot"
+LABEL org.opencontainers.image.description="Hypixel chat bot for Kittea Guild"
+LABEL org.opencontainers.image.base.name="docker.io/library/node:18-alpine"
