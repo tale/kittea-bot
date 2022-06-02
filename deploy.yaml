@@ -34,8 +34,13 @@ spec:
             secretKeyRef:
               name: kittea-bot-credentials
               key: DISCORD_TOKEN
-        - name: DISCORD_CHANNEL
+        - name: DISCORD_CHAT_CHANNEL
           valueFrom:
             secretKeyRef:
               name: kittea-bot-credentials
-              key: DISCORD_CHANNEL
+              key: DISCORD_CHAT_CHANNEL
+        - name: DISCORD_NOTIFY_CHANNEL
+          valueFrom:
+            secretKeyRef:
+              name: kittea-bot-credentials
+              key: DISCORD_NOTIFY_CHANNEL
