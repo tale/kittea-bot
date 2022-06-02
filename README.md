@@ -14,7 +14,8 @@ stringData:
     MC_EMAIL: 'account_email'
     MC_PASSWORD: 'account_password'
     DISCORD_TOKEN: 'bot_token'
-    DISCORD_CHANNEL: 'chat_channel_id'
+    DISCORD_CHAT_CHANNEL: 'chat_channel_id'
+    DISCORD_NOTIFY_CHANNEL: 'notify_channel_id'
 ```
 
 ### Development
