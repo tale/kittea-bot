@@ -1,4 +1,4 @@
-import { Client, Intents, TextChannel, Webhook } from 'discord.js'
+import { Client, GatewayIntentBits, TextChannel, Webhook } from 'discord.js'
 import { discord } from 'triggers'
 
 export class KitteaClient extends Client {
@@ -11,7 +11,7 @@ export class KitteaClient extends Client {
 
 	constructor() {
 		super({
-			intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_MESSAGES,
+			intents: GatewayIntentBits.Guilds | GatewayIntentBits.GuildMessages,
 			allowedMentions: {
 				parse: [] // Disable allowing mentions
 			}

@@ -1,4 +1,4 @@
-import { TextChannel } from 'discord.js'
+import { ActivityType, TextChannel } from 'discord.js'
 import { KitteaClient } from 'platforms'
 
 export default async function (bot: KitteaClient) {
@@ -12,7 +12,7 @@ export default async function (bot: KitteaClient) {
 			activities: [{
 				name: 'Party Games',
 				url: 'https://tale.me',
-				type: 'COMPETING'
+				type: ActivityType.Competing
 			}]
 		})
 
@@ -34,13 +34,15 @@ export default async function (bot: KitteaClient) {
 		let notifyWebhook = (await notifyChannel.fetchWebhooks()).filter(webhook => webhook.name === 'Kittea Bot').first()
 
 		if (!notifyWebhook) {
-			notifyWebhook = await notifyChannel.createWebhook('Kittea Bot', {
+			notifyWebhook = await notifyChannel.createWebhook({
+				name: 'Kittea Bot',
 				avatar: bot.user.displayAvatarURL()
 			})
 		}
 
 		bot.webhooks = {
-			chat: await chatChannel.createWebhook('Kittea Bot', {
+			chat: await chatChannel.createWebhook({
+				name: 'Kittea Bot',
 				avatar: bot.user.avatarURL()
 			}),
 			staff: notifyWebhook
