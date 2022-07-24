@@ -50,6 +50,5 @@ export default async function (bot: KitteaClient) {
 
 		const { username, discriminator } = bot.user
 		console.log('Logged in as %s#%s', username, discriminator)
-		await chatChannel.send(':yellow_circle: Restarting...')
 	})
 }

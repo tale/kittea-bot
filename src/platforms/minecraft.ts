@@ -5,34 +5,17 @@ export const bot = createBot({
 	username: process.env.MC_EMAIL!,
 	password: process.env.MC_PASSWORD!,
 	host: 'mc.hypixel.net',
-	version: '1.16.4',
-	hideErrors: true,
+	version: '1.8.9',
+	hideErrors: false,
 	auth: 'microsoft',
 	defaultChatPatterns: false,
-	viewDistance: 'tiny'
+	viewDistance: 'tiny',
 })
 
 for (const event of mc) {
 	// We need to trick the event into having an untyped EventEmitter
 	await event(bot, bot) // This is why we pass in bot twice
 }
-
-// bot.addChatPattern('')
-// bot.addChatPattern('%?@#L#L', /n/g)
-
-
-// export default {
-// 	/**
-// 	 * When a message is sent in the guild chat
-// 	 *
-// 	 * Returns:
-// 	 *  - Channel (Guild / Officer)
-// 	 *  - Hypixel Rank
-// 	 *  - Player Name
-// 	 *  - Guild Rank
-// 	 *  - Message
-// 	 */
-// 	guildChat: ,
 
 // 	/**
 // 	 * When a member connects to or disconnects from Hypixel
