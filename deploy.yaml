@@ -14,9 +14,9 @@ spec:
         app: kittea-bot
     spec:
       imagePullSecrets:
-      - name: aerum-registry
+      - name: harbor-bot
       containers:
-      - image: aerum.co/bots/kittea
+      - image: tale.me/bots/kittea
         name: kittea-bot
         env:
         - name: MC_EMAIL
