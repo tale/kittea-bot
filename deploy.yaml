@@ -14,33 +14,33 @@ spec:
         app: kittea-bot
     spec:
       imagePullSecrets:
-      - name: harbor-bot
+        - name: google-cloud
       containers:
-      - image: tale.me/bots/kittea
-        name: kittea-bot
-        env:
-        - name: MC_EMAIL
-          valueFrom:
-            secretKeyRef:
-              name: kittea-bot-credentials
-              key: MC_EMAIL
-        - name: MC_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: kittea-bot-credentials
-              key: MC_PASSWORD
-        - name: DISCORD_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: kittea-bot-credentials
-              key: DISCORD_TOKEN
-        - name: DISCORD_CHAT_CHANNEL
-          valueFrom:
-            secretKeyRef:
-              name: kittea-bot-credentials
-              key: DISCORD_CHAT_CHANNEL
-        - name: DISCORD_NOTIFY_CHANNEL
-          valueFrom:
-            secretKeyRef:
-              name: kittea-bot-credentials
-              key: DISCORD_NOTIFY_CHANNEL
+        - image: us-east4-docker.pkg.dev/aarnavtale/web/kittea:latest
+          name: kittea-bot
+          env:
+            - name: MC_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: kittea-bot-credentials
+                  key: MC_EMAIL
+            - name: MC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kittea-bot-credentials
+                  key: MC_PASSWORD
+            - name: DISCORD_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: kittea-bot-credentials
+                  key: DISCORD_TOKEN
+            - name: DISCORD_CHAT_CHANNEL
+              valueFrom:
+                secretKeyRef:
+                  name: kittea-bot-credentials
+                  key: DISCORD_CHAT_CHANNEL
+            - name: DISCORD_NOTIFY_CHANNEL
+              valueFrom:
+                secretKeyRef:
+                  name: kittea-bot-credentials
+                  key: DISCORD_NOTIFY_CHANNEL

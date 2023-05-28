@@ -20,7 +20,7 @@ tasks:
         silent: true
       - cmd: docker buildx use kittea-bot-builder
         silent: true
-      - cmd: docker buildx build --push -t aerum.co/bots/kittea -f docker/Dockerfile.prod --platform linux/amd64 --build-arg BUILD_DATE=$(date --rfc-3339=date) --build-arg GIT_STATE=$(git rev-parse HEAD) .
+      - cmd: docker buildx build --push -t us-east4-docker.pkg.dev/aarnavtale/web/kittea -f docker/Dockerfile.prod --platform linux/amd64 --build-arg BUILD_DATE=$(date --rfc-3339=date) --build-arg GIT_STATE=$(git rev-parse HEAD) .
         silent: true
       - defer: docker buildx rm kittea-bot-builder
         silent: true
